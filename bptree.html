@@ -1,0 +1,48 @@
+<html>
+	<body>
+		Check development console ...
+		<table>
+			<tr>
+				<td>Bucket Size</td>
+				<td>
+					<select id="bucketSizeComboId">
+						<option value="2">2</option>
+						<option value="4">4</option>
+						<option value="16">16</option>
+						<option value="32">32</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Element Count</td>
+				<td>
+					<select id="elementCountComboId">
+						<option value="16">16</option>
+						<option value="256">256</option>
+						<option value="65536">65536</option>
+						<option value="1048576">1048576</option>
+					</select>	
+				</td>
+			</tr>
+				<td colspan="2">
+					<input type="submit" value="Generate Random B+Tree" onclick="testRandom(document.getElementById('elementCountComboId').value, document.getElementById('bucketSizeComboId').value)">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" id="searchKeyId">
+				</td>
+				<td>
+					<input type="submit" value="Search for Value" onclick="console.dir(search(root, document.getElementById('searchKeyId').value))">
+				</td>
+			</tr>
+			<tr colspan="2">
+				<td>
+					<input type="submit" value="Dump Tree" onclick="console.dir(root)">
+				</td>
+			</tr>
+		</table>
+		
+		<script type="text/javascript" src="bptree.js"></script>
+	</body>
+</html>
